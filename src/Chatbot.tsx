@@ -14,9 +14,9 @@ interface KYCDocument {
 }
 
 interface SmartContractDetails {
-  name: string
-  symbol: string
-  totalSupply: string
+  contract_requirements: string
+  security_requirements: string
+  specifications: string
   features: string[]
 }
 
@@ -88,9 +88,9 @@ export function Chatbot() {
   })
   const [smartContractStep, setSmartContractStep] = useState(0)
   const [smartContractDetails, setSmartContractDetails] = useState<SmartContractDetails>({
-    name: '',
-    symbol: '',
-    totalSupply: '',
+    contract_requirements: '',
+    security_requirements: '',
+    specifications: '',
     features: []
   })
   const [showSecurityDropdown, setShowSecurityDropdown] = useState(false)
@@ -199,25 +199,25 @@ Currently submitted: ${kycDocuments.length + 1}/${KYC_DOCUMENTS.length} document
   const handleSmartContractQuery = async (input: string): Promise<string> => {
     if (smartContractStep === 0) {
       setSmartContractStep(1)
-      return "Let's create a smart contract. What should be the name of your token?"
+      return "Contract Purpose: (what is your desired contract purpose, e.g., Supply Chain Management, Voting System, etc.)"
     }
 
     if (smartContractStep === 1) {
-      setSmartContractDetails(prev => ({ ...prev, name: input }))
+      setSmartContractDetails(prev => ({ ...prev, contract_requirements: input }))
       setSmartContractStep(2)
-      return "Great! Now, what should be the symbol of your token?"
+      return "Great! Now, what should be the Security Requirements & Considerations? Implement role-based access control (RBAC) with at least 3 roles (e.g., Admin, Investor, Auditor)"
     }
 
     if (smartContractStep === 2) {
-      setSmartContractDetails(prev => ({ ...prev, symbol: input }))
+      setSmartContractDetails(prev => ({ ...prev, security_requirements: input }))
       setSmartContractStep(3)
-      return "Excellent. What should be the total supply of your token?"
+      return "Excellent. What should be the Smart Contract Specifications? EVM Compatibility: [Specify EVM version or compatibility requirements, Token (if applicable): Token Name & Symbol, Total Supply, Decimals"
     }
 
     if (smartContractStep === 3) {
-      setSmartContractDetails(prev => ({ ...prev, totalSupply: input }))
+      setSmartContractDetails(prev => ({ ...prev, specifications: input }))
       setSmartContractStep(4)
-      return "Almost done. What features would you like to include? (e.g., mintable, burnable, pausable)"
+      return "Almost done. What features would you like to include? Code Structure: Modular (separate files for logic, libraries, and interfaces) Well-commented (including security rationale for key decisions) Output Format: Solidity (.sol) file Accompanying README with: Deployment instructions Example usage (function calls) Security measures overview with justifications"
     }
 
     if (smartContractStep === 4) {
@@ -225,13 +225,22 @@ Currently submitted: ${kycDocuments.length + 1}/${KYC_DOCUMENTS.length} document
       setSmartContractDetails(prev => ({ ...prev, features: contractFeatures }))
       setSmartContractStep(0)
 
-      const prompt = `Generate a Solidity smart contract for an ERC20 token with the following specifications:
-        - Token Name: ${smartContractDetails.name}
-        - Token Symbol: ${smartContractDetails.symbol}
-        - Total Supply: ${smartContractDetails.totalSupply}
+      const prompt = `Generate a Solidity smart contract that has text with the following specifications:
+      - Modular (separate files for logic, libraries, and interfaces)
+    Well-commented (including security rationale for key decisions)
+
+        Security measures overview with justifications
+        - contract_requirements: ${smartContractDetails.contract_requirements}
+        - security_requirements: ${smartContractDetails.security_requirements}
+        - specifications: ${smartContractDetails.specifications} + ${smartContractDetails.features}
         - Features: ${contractFeatures.join(', ')}
-        
-        Provide the complete contract code and a brief explanation of its functionality.`
+    
+    Generate Secure Solidity Smart Contract Based on the Above Specifications.
+    Output Format:
+    Solidity (.sol) file
+    Accompanying README with:
+        Deployment instructions
+        Example usage (function calls)`
 
       try {
         const response = await generateTextWithGemini(prompt)
@@ -347,7 +356,7 @@ Your funds have been transferred securely.`
     <div className="w-full max-w-4xl mx-auto h-[700px] flex flex-col bg-white rounded-lg shadow-lg">
       <div className="flex items-center justify-between gap-2 p-4 border-b">
         <div className="flex items-center gap-2">
-          <span className="text-2xl">🔗</span>
+          <span className="textOutput Format: Solidity (.sol) file Accompanying README with: Deployment instructions-2xl">🔗</span>
           <h1 className="font-semibold">Synerga</h1>
         </div>
         <div className="relative">

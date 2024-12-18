@@ -17,6 +17,7 @@ const LandingPage: React.FC = () => {
       <nav className="bg-gray-800 shadow-sm">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <Link to="/" className="text-2xl font-bold text-green-500">
+          <span className="textOutput Format: Solidity (.sol) file Accompanying README with: Deployment instructions-2xl">🔗</span>
             Synerga
           </Link>
           <div className="relative">

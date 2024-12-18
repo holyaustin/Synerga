@@ -5,7 +5,7 @@
  ## Overview
  Synerga is an innovative AI-powered platform designed to streamline the development and validation of Solidity smart contracts. This cutting-edge tool empowers users to efficiently create, review, and refine their contracts, ensuring both functionality and security.
 
-![Synerga](https://github.com/user-attachments/assets/f1570859-3e1a-4089-8b5c-dfbb875dca1a)
+![Synerga](synerga.png)
 
 ## Features
 
