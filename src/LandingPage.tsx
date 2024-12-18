@@ -132,7 +132,7 @@ const LandingPage: React.FC = () => {
             Ready to explore the blockchain world?
           </h2>
           <p className="text-xl text-gray-800 mb-8 max-w-2xl mx-auto">
-            Leverage BlockchainGPT to simplify your blockchain journey and make informed decisions.
+            Leverage Synerga to simplify your blockchain journey and make informed decisions.
           </p>
           <Link
             to="/input"

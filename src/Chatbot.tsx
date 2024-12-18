@@ -32,7 +32,7 @@ interface SecurityHistory {
   privateKeys: string[];
 }
 
-const WELCOME_MESSAGE = `Welcome to BlockBot! 🔗
+const WELCOME_MESSAGE = `Welcome to Synerga! 🔗
 
 I'm your blockchain and cryptocurrency expert. I can help you with:
 - Generating and explaining smart contracts in Solidity
@@ -348,7 +348,7 @@ Your funds have been transferred securely.`
       <div className="flex items-center justify-between gap-2 p-4 border-b">
         <div className="flex items-center gap-2">
           <span className="text-2xl">🔗</span>
-          <h1 className="font-semibold">BlockBot</h1>
+          <h1 className="font-semibold">Synerga</h1>
         </div>
         <div className="relative">
           <button
