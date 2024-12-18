@@ -12,7 +12,7 @@ export async function processUserInput(input: string): Promise<string> {
 }
 
 async function generateSmartContract(input: string): Promise<string> {
-  const prompt = `Generate a complete Solidity smart contract based on the following request: "${input}". Include comments explaining the code.`
+  const prompt = `Generate a complete Solidity smart contract with visual (image) smart contract builder based on the following request: "${input}". Include comments explaining the code.`
   const contractCode = await generateTextWithGemini(prompt)
   return `Here's a smart contract based on your request:\n\n\`\`\`solidity\n${contractCode}\n\`\`\`\n\nYou can download this code as a .sol file using the button below.`
 }

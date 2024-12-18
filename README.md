@@ -18,17 +18,14 @@
 - **Step-by-Step Guides**: Interactive guides for wallet-related questions and workflows.
 - **Portfolio Summary Display**: View comprehensive summaries of token portfolios.
 
-
-
-Key Capabilities:
-
-    Contract Generation:
-        Collaborative Interface: Work alongside Synerga's intuitive UI to generate tailored Solidity smart contracts based on your specific requirements.
-        Logic Assistance: Receive real-time suggestions and guidance to ensure contractual logic is sound and aligned with your objectives.
-    Contract Audit & Verification:
-        Security Vulnerability Scan: Synerga's advanced AI scans your contracts for potential security risks, providing detailed reports and recommendations.
-        Logic Validation: Verify that your contract's behavior matches its intended functionality, identifying any discrepancies or edge cases.
-        Best Practice Alignment: Ensure your contract adheres to industry standards and best practices for readability, maintainability, and scalability.
+## Key Capabilities:
+    - **Contract Generation:**
+        - Collaborative Interface: Work alongside Synerga's intuitive UI to generate tailored - Solidity smart contracts based on your specific requirements.
+        - Logic Assistance: Receive real-time suggestions and guidance to ensure contractual - - logic is sound and aligned with your objectives.
+    - **Contract Audit & Verification:**
+        - Security Vulnerability Scan: Synerga's advanced AI scans your contracts for - - - - - potential security risks, providing detailed reports and recommendations.
+        - Logic Validation: Verify that your contract's behavior matches its intended - - - - functionality, identifying any discrepancies or edge cases.
+        - Best Practice Alignment: Ensure your contract adheres to industry standards and best practices for readability, maintainability, and scalability.
 
 
 ## Getting Started
@@ -41,6 +38,7 @@ Follow the instructions to set up and run the project on your local machine.
 - TypeScript
 - TailwindCSS
 - Vite
+- Google Gemini
 
 ## Contribution
 
@@ -49,4 +47,4 @@ Feel free to contribute to the project by submitting issues or pull requests.
 ## License
 
 This project is licensed under the MIT License.
-EOL
+
